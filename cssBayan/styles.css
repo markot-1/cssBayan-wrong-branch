@@ -1,0 +1,69 @@
+/* General styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Styles for containers */
+
+.container {
+    margin: 0 auto;
+    max-width: 40rem;
+}
+
+.accordion {
+    cursor: pointer;
+    transition: background .2s;
+}
+
+/* Styles for elements */
+
+h1,
+.accordion-item {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-bottom: solid #AE5B6C 0.1rem;
+}
+
+.accordion-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+h1 {
+    color: #AE5B6C;
+    font-weight: bold;
+    margin: 0;
+}
+
+.accordion-header {
+    color: #df0631;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    grid-column: auto / span 4;
+}
+
+.accordion-button {
+    display: none;
+}
+
+.fa-arrow-circle-down {
+    text-align: center;
+    color: #AE5B6C;
+    font-size: 0;
+}
+
+img {
+    max-width: 80%;
+}
+
+.accordion-img {
+    grid-column: auto / span 5;
+    color: #444;
+}
