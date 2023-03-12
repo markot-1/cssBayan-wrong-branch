@@ -62,8 +62,13 @@ h1,
     .accordion:hover .accordion-header {
         color: #AE5B6C;
     }
+
     .accordion:hover .accordion-header::after {
         content: '+';
+    }
+
+    img:hover {
+        box-shadow: 0.2rem 0.2rem 0.8rem 0 #0000005f;
     }
 }
 
@@ -101,8 +106,8 @@ h1,
 img {
     max-height: 23rem;
     max-width: 100%;
-    padding: 1.5rem;
-    margin: 0 auto;
+    padding: 0;
+    margin: 1.5rem;
 }
 
 
