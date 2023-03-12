@@ -9,6 +9,12 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+h1 {
+    color: #AE5B6C;
+    font-weight: bold;
+    margin: 0;
+}
+
 /* Styles for containers */
 
 .container {
@@ -21,8 +27,6 @@ body {
     transition: background .2s;
 }
 
-/* Styles for elements */
-
 h1,
 .accordion-item {
     padding-bottom: 1rem;
@@ -30,40 +34,54 @@ h1,
     border-bottom: solid #AE5B6C 0.1rem;
 }
 
-.accordion-item {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-h1 {
-    color: #AE5B6C;
-    font-weight: bold;
-    margin: 0;
-}
+/* Styles for elements inside accordeon-item*/
 
 .accordion-header {
     color: #df0631;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
-    grid-column: auto / span 4;
+    transition: color 0.5s;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-header::after {
+    content: '+';
+}
+
+.accordion:hover .accordion-header {
+    color: #AE5B6C;
 }
 
 .accordion-button {
     display: none;
 }
 
-.fa-arrow-circle-down {
-    text-align: center;
-    color: #AE5B6C;
-    font-size: 0;
+.accordion-button:checked~.accordion-header::after,
+.accordion-item:hover .accordion-header::after {
+    content: "x";
 }
 
-img {
-    max-width: 80%;
+.accordion-button:checked~.accordion-img,
+.accordion-item:hover .accordion-img {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
 }
 
 .accordion-img {
-    grid-column: auto / span 5;
-    color: #444;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s opacity, 0.5s visibility;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-height: 23rem;
+    padding: 1.5rem;
+    margin: 0 auto;
 }
